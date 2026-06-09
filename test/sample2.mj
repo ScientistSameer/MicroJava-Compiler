@@ -1,0 +1,31 @@
+// Sample 2: Program with intentional errors
+// Demonstrates error detection and recovery
+
+program Sample2
+  int x;
+  int y;
+  final char NEWLINE = '\n';
+
+{
+  void main()
+    int result;
+  {
+    x = 10;
+    y = 0;
+
+    // Error 1: missing semicolon (handled by recovery)
+    result = x + y
+
+    // Error 2: use of undeclared variable 'z'
+    x = z + 1;
+
+    // Valid statement after error recovery
+    print(result);
+    print(x);
+  }
+
+  int add(int a, int b)
+  {
+    return a + b;
+  }
+}

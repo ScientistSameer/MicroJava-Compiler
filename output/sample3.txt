@@ -1,0 +1,887 @@
+
+======================================================================
+  TOKEN STREAM
+======================================================================
+
+   Line   Col  Type            Lexeme
+  -------------------------------------------------------
+      4     1  PROGRAM         'program'
+      4     9  IDENT           'Sample3'
+      5     3  FINAL           'final'
+      5     9  INT             'int'
+      5    13  IDENT           'SIZE'
+      5    18  ASSIGN          '='
+      5    20  NUMBER          '10'
+      5    22  SEMICOLON       ';'
+      7     3  CLASS           'class'
+      7     9  IDENT           'Point'
+      7    15  LBRACE          '{'
+      8     5  INT             'int'
+      8     9  IDENT           'x'
+      8    10  SEMICOLON       ';'
+      9     5  INT             'int'
+      9     9  IDENT           'y'
+      9    10  SEMICOLON       ';'
+     10     3  RBRACE          '}'
+     12     3  IDENT           'Point'
+     12     9  IDENT           'origin'
+     12    15  SEMICOLON       ';'
+     13     3  INT             'int'
+     13     6  LBRACK          '['
+     13     7  RBRACK          ']'
+     13     9  IDENT           'data'
+     13    13  SEMICOLON       ';'
+     14     3  INT             'int'
+     14     7  IDENT           'n'
+     14     8  SEMICOLON       ';'
+     16     1  LBRACE          '{'
+     17     3  INT             'int'
+     17     7  IDENT           'max'
+     17    10  LPAREN          '('
+     17    11  INT             'int'
+     17    15  IDENT           'a'
+     17    16  COMMA           ','
+     17    18  INT             'int'
+     17    22  IDENT           'b'
+     17    23  RPAREN          ')'
+     18     3  LBRACE          '{'
+     19     5  IF              'if'
+     19     8  LPAREN          '('
+     19     9  IDENT           'a'
+     19    11  GT              '>'
+     19    13  IDENT           'b'
+     19    14  RPAREN          ')'
+     19    16  LBRACE          '{'
+     20     7  RETURN          'return'
+     20    14  IDENT           'a'
+     20    15  SEMICOLON       ';'
+     21     5  RBRACE          '}'
+     21     7  ELSE            'else'
+     21    12  LBRACE          '{'
+     22     7  RETURN          'return'
+     22    14  IDENT           'b'
+     22    15  SEMICOLON       ';'
+     23     5  RBRACE          '}'
+     24     3  RBRACE          '}'
+     26     3  INT             'int'
+     26     7  IDENT           'sumArray'
+     26    15  LPAREN          '('
+     26    16  INT             'int'
+     26    19  LBRACK          '['
+     26    20  RBRACK          ']'
+     26    22  IDENT           'arr'
+     26    25  COMMA           ','
+     26    27  INT             'int'
+     26    31  IDENT           'len'
+     26    34  RPAREN          ')'
+     27     5  INT             'int'
+     27     9  IDENT           'i'
+     27    10  SEMICOLON       ';'
+     28     5  INT             'int'
+     28     9  IDENT           'total'
+     28    14  SEMICOLON       ';'
+     29     3  LBRACE          '{'
+     30     5  IDENT           'total'
+     30    11  ASSIGN          '='
+     30    13  NUMBER          '0'
+     30    14  SEMICOLON       ';'
+     31     5  IDENT           'i'
+     31     7  ASSIGN          '='
+     31     9  NUMBER          '0'
+     31    10  SEMICOLON       ';'
+     32     5  WHILE           'while'
+     32    11  LPAREN          '('
+     32    12  IDENT           'i'
+     32    14  LT              '<'
+     32    16  IDENT           'len'
+     32    19  RPAREN          ')'
+     32    21  LBRACE          '{'
+     33     7  IDENT           'total'
+     33    13  ASSIGN          '='
+     33    15  IDENT           'total'
+     33    21  PLUS            '+'
+     33    23  IDENT           'arr'
+     33    26  LBRACK          '['
+     33    27  IDENT           'i'
+     33    28  RBRACK          ']'
+     33    29  SEMICOLON       ';'
+     34     7  IDENT           'i'
+     34     9  ASSIGN          '='
+     34    11  IDENT           'i'
+     34    13  PLUS            '+'
+     34    15  NUMBER          '1'
+     34    16  SEMICOLON       ';'
+     35     5  RBRACE          '}'
+     36     5  RETURN          'return'
+     36    12  IDENT           'total'
+     36    17  SEMICOLON       ';'
+     37     3  RBRACE          '}'
+     39     3  VOID            'void'
+     39     8  IDENT           'main'
+     39    12  LPAREN          '('
+     39    13  RPAREN          ')'
+     40     5  INT             'int'
+     40     9  IDENT           'i'
+     40    10  SEMICOLON       ';'
+     41     5  INT             'int'
+     41     9  IDENT           'result'
+     41    15  SEMICOLON       ';'
+     42     5  INT             'int'
+     42     9  IDENT           'm'
+     42    10  SEMICOLON       ';'
+     43     3  LBRACE          '{'
+     45     5  IDENT           'data'
+     45    10  ASSIGN          '='
+     45    12  NEW             'new'
+     45    16  INT             'int'
+     45    19  LBRACK          '['
+     45    20  IDENT           'SIZE'
+     45    24  RBRACK          ']'
+     45    25  SEMICOLON       ';'
+     46     5  IDENT           'i'
+     46     7  ASSIGN          '='
+     46     9  NUMBER          '0'
+     46    10  SEMICOLON       ';'
+     47     5  WHILE           'while'
+     47    11  LPAREN          '('
+     47    12  IDENT           'i'
+     47    14  LT              '<'
+     47    16  IDENT           'SIZE'
+     47    20  RPAREN          ')'
+     47    22  LBRACE          '{'
+     48     7  READ            'read'
+     48    11  LPAREN          '('
+     48    12  IDENT           'data'
+     48    16  LBRACK          '['
+     48    17  IDENT           'i'
+     48    18  RBRACK          ']'
+     48    19  RPAREN          ')'
+     48    20  SEMICOLON       ';'
+     49     7  IDENT           'i'
+     49     9  ASSIGN          '='
+     49    11  IDENT           'i'
+     49    13  PLUS            '+'
+     49    15  NUMBER          '1'
+     49    16  SEMICOLON       ';'
+     50     5  RBRACE          '}'
+     53     5  IDENT           'result'
+     53    12  ASSIGN          '='
+     53    14  IDENT           'sumArray'
+     53    22  LPAREN          '('
+     53    23  IDENT           'data'
+     53    27  COMMA           ','
+     53    29  IDENT           'SIZE'
+     53    33  RPAREN          ')'
+     53    34  SEMICOLON       ';'
+     54     5  IDENT           'm'
+     54     7  ASSIGN          '='
+     54     9  IDENT           'max'
+     54    12  LPAREN          '('
+     54    13  IDENT           'result'
+     54    19  COMMA           ','
+     54    21  NUMBER          '0'
+     54    22  RPAREN          ')'
+     54    23  SEMICOLON       ';'
+     57     5  IDENT           'origin'
+     57    12  ASSIGN          '='
+     57    14  NEW             'new'
+     57    18  IDENT           'Point'
+     57    23  SEMICOLON       ';'
+     58     5  IDENT           'origin'
+     58    11  DOT             '.'
+     58    12  IDENT           'x'
+     58    14  ASSIGN          '='
+     58    16  NUMBER          '0'
+     58    17  SEMICOLON       ';'
+     59     5  IDENT           'origin'
+     59    11  DOT             '.'
+     59    12  IDENT           'y'
+     59    14  ASSIGN          '='
+     59    16  NUMBER          '0'
+     59    17  SEMICOLON       ';'
+     61     5  PRINT           'print'
+     61    10  LPAREN          '('
+     61    11  IDENT           'result'
+     61    17  RPAREN          ')'
+     61    18  SEMICOLON       ';'
+     62     5  PRINT           'print'
+     62    10  LPAREN          '('
+     62    11  IDENT           'm'
+     62    12  RPAREN          ')'
+     62    13  SEMICOLON       ';'
+     63     5  PRINT           'print'
+     63    10  LPAREN          '('
+     63    11  IDENT           'origin'
+     63    17  DOT             '.'
+     63    18  IDENT           'x'
+     63    19  RPAREN          ')'
+     63    20  SEMICOLON       ';'
+     64     5  PRINT           'print'
+     64    10  LPAREN          '('
+     64    11  IDENT           'origin'
+     64    17  DOT             '.'
+     64    18  IDENT           'y'
+     64    19  RPAREN          ')'
+     64    20  SEMICOLON       ';'
+     65     3  RBRACE          '}'
+     66     1  RBRACE          '}'
+
+======================================================================
+  ABSTRACT SYNTAX TREE
+======================================================================
+Program('Sample3')
+  ConstDecl('SIZE' : int = 10)
+  ClassDecl('Point')
+    VarDecl(int x)
+    VarDecl(int y)
+  VarDecl(Point origin)
+  VarDecl(int[] data)
+  VarDecl(int n)
+  Method(int 'max'(int a, int b))
+    Block
+      If
+        Condition('>')
+          Designator(a)
+          Designator(b)
+        then:
+          Block
+            Return
+              Designator(a)
+        else:
+          Block
+            Return
+              Designator(b)
+  Method(int 'sumArray'(int[] arr, int len))
+    VarDecl(int i)
+    VarDecl(int total)
+    Block
+      Assign
+        Designator(total)
+        Number(0)
+      Assign
+        Designator(i)
+        Number(0)
+      While
+        Condition('<')
+          Designator(i)
+          Designator(len)
+        Block
+          Assign
+            Designator(total)
+            BinOp('+')
+              Designator(total)
+              Designator(arr[i])
+          Assign
+            Designator(i)
+            BinOp('+')
+              Designator(i)
+              Number(1)
+      Return
+        Designator(total)
+  Method(void 'main'())
+    VarDecl(int i)
+    VarDecl(int result)
+    VarDecl(int m)
+    Block
+      Assign
+        Designator(data)
+        NewArray('int')
+          Designator(SIZE)
+      Assign
+        Designator(i)
+        Number(0)
+      While
+        Condition('<')
+          Designator(i)
+          Designator(SIZE)
+        Block
+          Read(data[i])
+          Assign
+            Designator(i)
+            BinOp('+')
+              Designator(i)
+              Number(1)
+      Assign
+        Designator(result)
+        CallExpr(sumArray)
+          Designator(data)
+          Designator(SIZE)
+      Assign
+        Designator(m)
+        CallExpr(max)
+          Designator(result)
+          Number(0)
+      Assign
+        Designator(origin)
+        NewObject('Point')
+      Assign
+        Designator(origin.x)
+        Number(0)
+      Assign
+        Designator(origin.y)
+        Number(0)
+      Print
+        Designator(result)
+      Print
+        Designator(m)
+      Print
+        Designator(origin.x)
+      Print
+        Designator(origin.y)
+
+======================================================================
+  RECURSIVE DESCENT TRACE (first 40)
+======================================================================
+match PROGRAM ('program')
+match IDENT ('Sample3')
+match FINAL ('final')
+match INT ('int')
+match IDENT ('SIZE')
+match ASSIGN ('=')
+match NUMBER ('10')
+match SEMICOLON (';')
+match CLASS ('class')
+match IDENT ('Point')
+match LBRACE ('{')
+match INT ('int')
+match IDENT ('x')
+match SEMICOLON (';')
+match INT ('int')
+match IDENT ('y')
+match SEMICOLON (';')
+match RBRACE ('}')
+match IDENT ('Point')
+match IDENT ('origin')
+match SEMICOLON (';')
+match INT ('int')
+match LBRACK ('[')
+match RBRACK (']')
+match IDENT ('data')
+match SEMICOLON (';')
+match INT ('int')
+match IDENT ('n')
+match SEMICOLON (';')
+match LBRACE ('{')
+match INT ('int')
+match IDENT ('max')
+match LPAREN ('(')
+match INT ('int')
+match IDENT ('a')
+match COMMA (',')
+match INT ('int')
+match IDENT ('b')
+match RPAREN (')')
+match LBRACE ('{')
+
+======================================================================
+  FIRST & FOLLOW SETS
+======================================================================
+FIRST sets:
+  FIRST(ActPars) = { lparen }
+  FIRST(Addop) = { minus, plus }
+  FIRST(Block) = { lbrace }
+  FIRST(ClassDecl) = { class }
+  FIRST(Condition) = { charconst, ident, lparen, minus, new, number }
+  FIRST(ConstDecl) = { final }
+  FIRST(Decls) = { char, class, epsilon, final, ident, int }
+  FIRST(Designator) = { ident }
+  FIRST(DesignatorList) = { dot, epsilon, lbrack }
+  FIRST(Expr) = { charconst, ident, lparen, minus, new, number }
+  FIRST(ExprList) = { comma, epsilon }
+  FIRST(ExprPrime) = { epsilon, minus, plus }
+  FIRST(Factor) = { charconst, ident, lparen, new, number }
+  FIRST(FormPars) = { char, ident, int }
+  FIRST(FormParsList) = { comma, epsilon }
+  FIRST(IdentList) = { comma, epsilon }
+  FIRST(MethodDecl) = { char, ident, int, void }
+  FIRST(MethodDecls) = { char, epsilon, ident, int, void }
+  FIRST(MethodType) = { char, ident, int, void }
+  FIRST(Mulop) = { div, mod, times }
+  FIRST(NewTypeName) = { char, ident, int }
+  FIRST(NumberOrChar) = { charconst, number }
+  FIRST(OptActPars) = { epsilon, lparen }
+  FIRST(OptBrackets) = { epsilon, lbrack }
+  FIRST(OptElse) = { else, epsilon }
+  FIRST(OptExpr) = { charconst, epsilon, ident, lparen, minus, new, number }
+  FIRST(OptExprs) = { charconst, epsilon, ident, lparen, minus, new, number }
+  FIRST(OptFormPars) = { char, epsilon, ident, int }
+  FIRST(OptMinus) = { epsilon, minus }
+  FIRST(OptNewArray) = { epsilon, lbrack }
+  FIRST(OptPrintNumber) = { comma, epsilon }
+  FIRST(Program) = { program }
+  FIRST(Relop) = { eq, ge, gt, le, lt, ne }
+  FIRST(Statement) = { ident, if, lbrace, print, read, return, semicolon, while }
+  FIRST(StatementSuffix) = { assign, lparen }
+  FIRST(Statements) = { epsilon, ident, if, lbrace, print, read, return, semicolon, while }
+  FIRST(Term) = { charconst, ident, lparen, new, number }
+  FIRST(TermPrime) = { div, epsilon, mod, times }
+  FIRST(Type) = { char, ident, int }
+  FIRST(VarDecl) = { char, ident, int }
+  FIRST(VarDecls) = { char, epsilon, ident, int }
+
+FOLLOW sets:
+  FOLLOW(ActPars) = { comma, div, eq, ge, gt, le, lt, minus, mod, ne, plus, rbrack, rparen, semicolon, times }
+  FOLLOW(Addop) = { charconst, ident, lparen, new, number }
+  FOLLOW(Block) = { char, else, ident, if, int, lbrace, print, rbrace, read, return, semicolon, void, while }
+  FOLLOW(ClassDecl) = { char, class, final, ident, int, lbrace }
+  FOLLOW(Condition) = { rparen }
+  FOLLOW(ConstDecl) = { char, class, final, ident, int, lbrace }
+  FOLLOW(Decls) = { lbrace }
+  FOLLOW(Designator) = { assign, comma, div, eq, ge, gt, le, lparen, lt, minus, mod, ne, plus, rbrack, rparen, semicolon, times }
+  FOLLOW(DesignatorList) = { assign, comma, div, eq, ge, gt, le, lparen, lt, minus, mod, ne, plus, rbrack, rparen, semicolon, times }
+  FOLLOW(Expr) = { comma, eq, ge, gt, le, lt, ne, rbrack, rparen, semicolon }
+  FOLLOW(ExprList) = { rparen }
+  FOLLOW(ExprPrime) = { comma, eq, ge, gt, le, lt, ne, rbrack, rparen, semicolon }
+  FOLLOW(Factor) = { comma, div, eq, ge, gt, le, lt, minus, mod, ne, plus, rbrack, rparen, semicolon, times }
+  FOLLOW(FormPars) = { rparen }
+  FOLLOW(FormParsList) = { rparen }
+  FOLLOW(IdentList) = { semicolon }
+  FOLLOW(MethodDecl) = { char, ident, int, rbrace, void }
+  FOLLOW(MethodDecls) = { rbrace }
+  FOLLOW(MethodType) = { ident }
+  FOLLOW(Mulop) = { charconst, ident, lparen, new, number }
+  FOLLOW(NewTypeName) = { comma, div, eq, ge, gt, lbrack, le, lt, minus, mod, ne, plus, rbrack, rparen, semicolon, times }
+  FOLLOW(NumberOrChar) = { semicolon }
+  FOLLOW(OptActPars) = { comma, div, eq, ge, gt, le, lt, minus, mod, ne, plus, rbrack, rparen, semicolon, times }
+  FOLLOW(OptBrackets) = { ident }
+  FOLLOW(OptElse) = { else, ident, if, lbrace, print, rbrace, read, return, semicolon, while }
+  FOLLOW(OptExpr) = { semicolon }
+  FOLLOW(OptExprs) = { rparen }
+  FOLLOW(OptFormPars) = { rparen }
+  FOLLOW(OptMinus) = { charconst, ident, lparen, new, number }
+  FOLLOW(OptNewArray) = { comma, div, eq, ge, gt, le, lt, minus, mod, ne, plus, rbrack, rparen, semicolon, times }
+  FOLLOW(OptPrintNumber) = { rparen }
+  FOLLOW(Program) = { $ }
+  FOLLOW(Relop) = { charconst, ident, lparen, minus, new, number }
+  FOLLOW(Statement) = { else, ident, if, lbrace, print, rbrace, read, return, semicolon, while }
+  FOLLOW(StatementSuffix) = { semicolon }
+  FOLLOW(Statements) = { rbrace }
+  FOLLOW(Term) = { comma, eq, ge, gt, le, lt, minus, ne, plus, rbrack, rparen, semicolon }
+  FOLLOW(TermPrime) = { comma, eq, ge, gt, le, lt, minus, ne, plus, rbrack, rparen, semicolon }
+  FOLLOW(Type) = { ident }
+  FOLLOW(VarDecl) = { char, class, final, ident, int, lbrace, rbrace }
+  FOLLOW(VarDecls) = { lbrace, rbrace }
+
+======================================================================
+  LL(1) PARSING TABLE (first 30 entries)
+======================================================================
+Non-Terminal           Terminal         Production
+--------------------------------------------------------------------------------
+ActPars                lparen           ActPars -> lparen OptExprs rparen
+Addop                  minus            Addop -> minus
+Addop                  plus             Addop -> plus
+Block                  lbrace           Block -> lbrace Statements rbrace
+ClassDecl              class            ClassDecl -> class ident lbrace VarDecls rbrace
+Condition              charconst        Condition -> Expr Relop Expr
+Condition              ident            Condition -> Expr Relop Expr
+Condition              lparen           Condition -> Expr Relop Expr
+Condition              minus            Condition -> Expr Relop Expr
+Condition              new              Condition -> Expr Relop Expr
+Condition              number           Condition -> Expr Relop Expr
+ConstDecl              final            ConstDecl -> final Type ident assign NumberOrChar semicolon
+Decls                  char             Decls -> VarDecl Decls
+Decls                  class            Decls -> ClassDecl Decls
+Decls                  final            Decls -> ConstDecl Decls
+Decls                  ident            Decls -> VarDecl Decls
+Decls                  int              Decls -> VarDecl Decls
+Decls                  lbrace           Decls -> epsilon
+Designator             ident            Designator -> ident DesignatorList
+DesignatorList         assign           DesignatorList -> epsilon
+DesignatorList         comma            DesignatorList -> epsilon
+DesignatorList         div              DesignatorList -> epsilon
+DesignatorList         dot              DesignatorList -> dot ident DesignatorList
+DesignatorList         eq               DesignatorList -> epsilon
+DesignatorList         ge               DesignatorList -> epsilon
+DesignatorList         gt               DesignatorList -> epsilon
+DesignatorList         lbrack           DesignatorList -> lbrack Expr rbrack DesignatorList
+DesignatorList         le               DesignatorList -> epsilon
+DesignatorList         lparen           DesignatorList -> epsilon
+DesignatorList         lt               DesignatorList -> epsilon
+
+======================================================================
+  LL(1) PARSE TRACE
+======================================================================
+STACK                                                   INPUT                ACTION
+----------------------------------------------------------------------------------------------------
+['$', 'Program']                                        program              Program -> program ident Decls lbrace MethodDecls rbrace
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'ident', 'program'] program              match program
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'ident'] Sample3              match ident
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls']       final                Decls -> ConstDecl Decls
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'ConstDecl'] final                ConstDecl -> final Type ident assign NumberOrChar semicolon
+['lbrace', 'Decls', 'semicolon', 'NumberOrChar', 'assign', 'ident', 'Type', 'final'] final                match final
+['MethodDecls', 'lbrace', 'Decls', 'semicolon', 'NumberOrChar', 'assign', 'ident', 'Type'] int                  Type -> int OptBrackets
+['lbrace', 'Decls', 'semicolon', 'NumberOrChar', 'assign', 'ident', 'OptBrackets', 'int'] int                  match int
+['MethodDecls', 'lbrace', 'Decls', 'semicolon', 'NumberOrChar', 'assign', 'ident', 'OptBrackets'] SIZE                 OptBrackets -> epsilon
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'NumberOrChar', 'assign', 'ident'] SIZE                 match ident
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'NumberOrChar', 'assign'] =                    match assign
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'NumberOrChar'] 10                   NumberOrChar -> number
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'number'] 10                   match number
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon'] ;                    match semicolon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls']       class                Decls -> ClassDecl Decls
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'ClassDecl'] class                ClassDecl -> class ident lbrace VarDecls rbrace
+['MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'lbrace', 'ident', 'class'] class                match class
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'lbrace', 'ident'] Point                match ident
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'lbrace'] {                    match lbrace
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls'] int                  VarDecls -> VarDecl VarDecls
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'VarDecl'] int                  VarDecl -> Type ident IdentList semicolon
+['lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'OptBrackets', 'int'] int                  match int
+['lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'OptBrackets'] x                    OptBrackets -> epsilon
+['MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList', 'ident'] x                    match ident
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList'] ;                    IdentList -> epsilon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon'] ;                    match semicolon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls'] int                  VarDecls -> VarDecl VarDecls
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'VarDecl'] int                  VarDecl -> Type ident IdentList semicolon
+['lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'OptBrackets', 'int'] int                  match int
+['lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'OptBrackets'] y                    OptBrackets -> epsilon
+['MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList', 'ident'] y                    match ident
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon', 'IdentList'] ;                    IdentList -> epsilon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls', 'semicolon'] ;                    match semicolon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace', 'VarDecls'] }                    VarDecls -> epsilon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'rbrace'] }                    match rbrace
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls']       Point                Decls -> VarDecl Decls
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'VarDecl'] Point                VarDecl -> Type ident IdentList semicolon
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'Type'] Point                Type -> ident OptBrackets
+['MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'OptBrackets', 'ident'] Point                match ident
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'OptBrackets'] origin               OptBrackets -> epsilon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident'] origin               match ident
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList'] ;                    IdentList -> epsilon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon'] ;                    match semicolon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls']       int                  Decls -> VarDecl Decls
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'VarDecl'] int                  VarDecl -> Type ident IdentList semicolon
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'OptBrackets', 'int'] int                  match int
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'OptBrackets'] [                    OptBrackets -> lbrack rbrack
+['MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'rbrack', 'lbrack'] [                    match lbrack
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'rbrack'] ]                    match rbrack
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident'] data                 match ident
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList'] ;                    IdentList -> epsilon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon'] ;                    match semicolon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls']       int                  Decls -> VarDecl Decls
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'VarDecl'] int                  VarDecl -> Type ident IdentList semicolon
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'OptBrackets', 'int'] int                  match int
+['rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident', 'OptBrackets'] n                    OptBrackets -> epsilon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList', 'ident'] n                    match ident
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon', 'IdentList'] ;                    IdentList -> epsilon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls', 'semicolon'] ;                    match semicolon
+['$', 'rbrace', 'MethodDecls', 'lbrace', 'Decls']       {                    Decls -> epsilon
+['$', 'rbrace', 'MethodDecls', 'lbrace']                {                    match lbrace
+['$', 'rbrace', 'MethodDecls']                          int                  MethodDecls -> MethodDecl MethodDecls
+['$', 'rbrace', 'MethodDecls', 'MethodDecl']            int                  MethodDecl -> MethodType ident lparen OptFormPars rparen VarDecls Block
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident', 'MethodType'] int                  MethodType -> Type
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident', 'Type'] int                  Type -> int OptBrackets
+['Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident', 'OptBrackets', 'int'] int                  match int
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident', 'OptBrackets'] max                  OptBrackets -> epsilon
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident'] max                  match ident
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen'] (                    match lparen
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars'] int                  OptFormPars -> FormPars
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormPars'] int                  FormPars -> Type ident FormParsList
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'OptBrackets', 'int'] int                  match int
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'OptBrackets'] a                    OptBrackets -> epsilon
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident'] a                    match ident
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList'] ,                    FormParsList -> comma Type ident FormParsList
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'Type', 'comma'] ,                    match comma
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'OptBrackets', 'int'] int                  match int
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'OptBrackets'] b                    OptBrackets -> epsilon
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident'] b                    match ident
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList'] )                    FormParsList -> epsilon
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen'] )                    match rparen
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls']     {                    VarDecls -> epsilon
+['$', 'rbrace', 'MethodDecls', 'Block']                 {                    Block -> lbrace Statements rbrace
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'lbrace'] {                    match lbrace
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements']  if                   Statements -> Statement Statements
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'Statement'] if                   Statement -> if lparen Condition rparen Statement OptElse
+['rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'Condition', 'lparen', 'if'] if                   match if
+['MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'Condition', 'lparen'] (                    match lparen
+['rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'Condition'] a                    Condition -> Expr Relop Expr
+['rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'Expr', 'Relop', 'Expr'] a                    Expr -> OptMinus Term ExprPrime
+['OptElse', 'Statement', 'rparen', 'Expr', 'Relop', 'ExprPrime', 'Term', 'OptMinus'] a                    OptMinus -> epsilon
+['Statements', 'OptElse', 'Statement', 'rparen', 'Expr', 'Relop', 'ExprPrime', 'Term'] a                    Term -> Factor TermPrime
+['OptElse', 'Statement', 'rparen', 'Expr', 'Relop', 'ExprPrime', 'TermPrime', 'Factor'] a                    Factor -> Designator OptActPars
+['Statement', 'rparen', 'Expr', 'Relop', 'ExprPrime', 'TermPrime', 'OptActPars', 'Designator'] a                    Designator -> ident DesignatorList
+['rparen', 'Expr', 'Relop', 'ExprPrime', 'TermPrime', 'OptActPars', 'DesignatorList', 'ident'] a                    match ident
+['Statement', 'rparen', 'Expr', 'Relop', 'ExprPrime', 'TermPrime', 'OptActPars', 'DesignatorList'] >                    DesignatorList -> epsilon
+['OptElse', 'Statement', 'rparen', 'Expr', 'Relop', 'ExprPrime', 'TermPrime', 'OptActPars'] >                    OptActPars -> epsilon
+['Statements', 'OptElse', 'Statement', 'rparen', 'Expr', 'Relop', 'ExprPrime', 'TermPrime'] >                    TermPrime -> epsilon
+['rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'Expr', 'Relop', 'ExprPrime'] >                    ExprPrime -> epsilon
+['MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'Expr', 'Relop'] >                    Relop -> gt
+['MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'Expr', 'gt'] >                    match gt
+['rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'Expr'] b                    Expr -> OptMinus Term ExprPrime
+['rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'ExprPrime', 'Term', 'OptMinus'] b                    OptMinus -> epsilon
+['MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'ExprPrime', 'Term'] b                    Term -> Factor TermPrime
+['rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'ExprPrime', 'TermPrime', 'Factor'] b                    Factor -> Designator OptActPars
+['Statements', 'OptElse', 'Statement', 'rparen', 'ExprPrime', 'TermPrime', 'OptActPars', 'Designator'] b                    Designator -> ident DesignatorList
+['OptElse', 'Statement', 'rparen', 'ExprPrime', 'TermPrime', 'OptActPars', 'DesignatorList', 'ident'] b                    match ident
+['Statements', 'OptElse', 'Statement', 'rparen', 'ExprPrime', 'TermPrime', 'OptActPars', 'DesignatorList'] )                    DesignatorList -> epsilon
+['rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'ExprPrime', 'TermPrime', 'OptActPars'] )                    OptActPars -> epsilon
+['MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'ExprPrime', 'TermPrime'] )                    TermPrime -> epsilon
+['rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement', 'rparen', 'ExprPrime'] )                    ExprPrime -> epsilon
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement', 'rparen'] )                    match rparen
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Statement'] {                    Statement -> Block
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'Block'] {                    Block -> lbrace Statements rbrace
+['rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements', 'lbrace'] {                    match lbrace
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements'] return               Statements -> Statement Statements
+['rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements', 'Statement'] return               Statement -> return OptExpr semicolon
+['rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon', 'OptExpr', 'return'] return               match return
+['MethodDecls', 'rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon', 'OptExpr'] a                    OptExpr -> Expr
+['MethodDecls', 'rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon', 'Expr'] a                    Expr -> OptMinus Term ExprPrime
+['Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'Term', 'OptMinus'] a                    OptMinus -> epsilon
+['rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'Term'] a                    Term -> Factor TermPrime
+['Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'Factor'] a                    Factor -> Designator OptActPars
+['OptElse', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'OptActPars', 'Designator'] a                    Designator -> ident DesignatorList
+['rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'OptActPars', 'DesignatorList', 'ident'] a                    match ident
+['OptElse', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'OptActPars', 'DesignatorList'] ;                    DesignatorList -> epsilon
+['Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'OptActPars'] ;                    OptActPars -> epsilon
+['rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime'] ;                    TermPrime -> epsilon
+['MethodDecls', 'rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon', 'ExprPrime'] ;                    ExprPrime -> epsilon
+['rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements', 'semicolon'] ;                    match semicolon
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'rbrace', 'Statements'] }                    Statements -> epsilon
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse', 'rbrace'] }                    match rbrace
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'OptElse'] else                 OptElse -> else Statement
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'Statement', 'else'] else                 match else
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'Statement'] {                    Statement -> Block
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'Block'] {                    Block -> lbrace Statements rbrace
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements', 'lbrace'] {                    match lbrace
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements'] return               Statements -> Statement Statements
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements', 'Statement'] return               Statement -> return OptExpr semicolon
+['MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon', 'OptExpr', 'return'] return               match return
+['rbrace', 'MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon', 'OptExpr'] b                    OptExpr -> Expr
+['rbrace', 'MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon', 'Expr'] b                    Expr -> OptMinus Term ExprPrime
+['rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'Term', 'OptMinus'] b                    OptMinus -> epsilon
+['MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'Term'] b                    Term -> Factor TermPrime
+['rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'Factor'] b                    Factor -> Designator OptActPars
+['Statements', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'OptActPars', 'Designator'] b                    Designator -> ident DesignatorList
+['rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'OptActPars', 'DesignatorList', 'ident'] b                    match ident
+['Statements', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'OptActPars', 'DesignatorList'] ;                    DesignatorList -> epsilon
+['rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime', 'OptActPars'] ;                    OptActPars -> epsilon
+['MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon', 'ExprPrime', 'TermPrime'] ;                    TermPrime -> epsilon
+['rbrace', 'MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon', 'ExprPrime'] ;                    ExprPrime -> epsilon
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements', 'semicolon'] ;                    match semicolon
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'rbrace', 'Statements'] }                    Statements -> epsilon
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements', 'rbrace'] }                    match rbrace
+['$', 'rbrace', 'MethodDecls', 'rbrace', 'Statements']  }                    Statements -> epsilon
+['$', 'rbrace', 'MethodDecls', 'rbrace']                }                    match rbrace
+['$', 'rbrace', 'MethodDecls']                          int                  MethodDecls -> MethodDecl MethodDecls
+['$', 'rbrace', 'MethodDecls', 'MethodDecl']            int                  MethodDecl -> MethodType ident lparen OptFormPars rparen VarDecls Block
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident', 'MethodType'] int                  MethodType -> Type
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident', 'Type'] int                  Type -> int OptBrackets
+['Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident', 'OptBrackets', 'int'] int                  match int
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident', 'OptBrackets'] sumArray             OptBrackets -> epsilon
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen', 'ident'] sumArray             match ident
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars', 'lparen'] (                    match lparen
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'OptFormPars'] int                  OptFormPars -> FormPars
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormPars'] int                  FormPars -> Type ident FormParsList
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'OptBrackets', 'int'] int                  match int
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'OptBrackets'] [                    OptBrackets -> lbrack rbrack
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'rbrack', 'lbrack'] [                    match lbrack
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'rbrack'] ]                    match rbrack
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident'] arr                  match ident
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList'] ,                    FormParsList -> comma Type ident FormParsList
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'Type', 'comma'] ,                    match comma
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'OptBrackets', 'int'] int                  match int
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident', 'OptBrackets'] len                  OptBrackets -> epsilon
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList', 'ident'] len                  match ident
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen', 'FormParsList'] )                    FormParsList -> epsilon
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'rparen'] )                    match rparen
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls']     int                  VarDecls -> VarDecl VarDecls
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'VarDecl'] int                  VarDecl -> Type ident IdentList semicolon
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['MethodDecls', 'Block', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'OptBrackets', 'int'] int                  match int
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'OptBrackets'] i                    OptBrackets -> epsilon
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'semicolon', 'IdentList', 'ident'] i                    match ident
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'semicolon', 'IdentList'] ;                    IdentList -> epsilon
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'semicolon'] ;                    match semicolon
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls']     int                  VarDecls -> VarDecl VarDecls
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'VarDecl'] int                  VarDecl -> Type ident IdentList semicolon
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'Type'] int                  Type -> int OptBrackets
+['MethodDecls', 'Block', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'OptBrackets', 'int'] int                  match int
+['rbrace', 'MethodDecls', 'Block', 'VarDecls', 'semicolon', 'IdentList', 'ident', 'OptBrackets'] total                OptBrackets -> epsilon
+['$', 'rbrace', 'MethodDecls', 'Block', 'VarDecls', 'semicolon', 'IdentList', 'ident'] total                match ident
+  ... (531 more steps)
+
+======================================================================
+  SYMBOL TABLE
+======================================================================
+========================================================================
+SYMBOL TABLE DUMP
+========================================================================
+
+Scope [0] "universe"  (6 entries)
+------------------------------------------------------------
+  builtin  type                     char                 scope=0 L0:C0
+  method   char(int) -> char        chr                  scope=0 L0:C0
+  builtin  type                     int                  scope=0 L0:C0
+  method   int(array) -> int        len                  scope=0 L0:C0
+  builtin  null                     null                 scope=0 L0:C0
+  method   int(char) -> int         ord                  scope=0 L0:C0
+
+Scope [1] "scope_1"  (8 entries)
+------------------------------------------------------------
+  class    class                    Point                scope=1 L7:C3
+  const    int = 10                 SIZE                 scope=1 L5:C13
+  var      int[]                    data                 scope=1 L13:C3
+  method   void() -> void           main                 scope=1 L39:C3
+  method   int(int, int) -> int     max                  scope=1 L17:C3
+  var      int                      n                    scope=1 L14:C3
+  var      Point                    origin               scope=1 L12:C3
+  method   int(int[], int) -> int   sumArray             scope=1 L26:C3
+
+Scope [2] "Point"  (2 entries)
+------------------------------------------------------------
+  var      int                      x                    scope=2 L8:C5
+  var      int                      y                    scope=2 L9:C5
+
+Scope [2] "max"  (2 entries)
+------------------------------------------------------------
+  param    int                      a                    scope=2 L17:C15
+  param    int                      b                    scope=2 L17:C22
+
+Scope [2] "sumArray"  (4 entries)
+------------------------------------------------------------
+  param    int[]                    arr                  scope=2 L26:C22
+  var      int                      i                    scope=2 L27:C5
+  param    int                      len                  scope=2 L26:C31
+  var      int                      total                scope=2 L28:C5
+
+Scope [2] "main"  (3 entries)
+------------------------------------------------------------
+  var      int                      i                    scope=2 L40:C5
+  var      int                      m                    scope=2 L42:C5
+  var      int                      result               scope=2 L41:C5
+========================================================================
+
+======================================================================
+  THREE-ADDRESS CODE
+======================================================================
+program_Sample3:
+method_max:
+    cmp_> t1 a b
+    cond_jump_false L1 t1 
+    return a
+    goto L2
+L1:
+    return b
+L2:
+method_sumArray:
+    total = 0
+    i = 0
+L3:
+    cmp_< t2 i len
+    cond_jump_false L4 t2 
+    t3 = arr[i]
+    t4 = total + t3
+    total = t4
+    t5 = i + 1
+    i = t5
+    goto L3
+L4:
+    return total
+method_main:
+    t6 = new int[SIZE]
+    data = t6
+    i = 0
+L5:
+    cmp_< t7 i SIZE
+    cond_jump_false L6 t7 
+    read data
+    t8 = i + 1
+    i = t8
+    goto L5
+L6:
+    param data
+    param SIZE
+    t9 = call sumArray, 2
+    result = t9
+    param result
+    param 0
+    t10 = call max, 2
+    m = t10
+    t11 = new Point
+    origin = t11
+    0.x = origin
+    0.y = origin
+    print result
+    print m
+    t12 = origin.x
+    print t12
+    t13 = origin.y
+    print t13
+
+======================================================================
+  OPTIMIZED TAC (constant folding + DCE)
+======================================================================
+program_Sample3:
+method_max:
+    cond_jump_false L1 t1 
+    return a
+    goto L2
+L1:
+    return b
+L2:
+method_sumArray:
+    total = 0
+    i = 0
+L3:
+    cond_jump_false L4 t2 
+    t3 = arr[i]
+    t4 = total + t3
+    total = t4
+    t5 = 1
+    i = t5
+    goto L3
+L4:
+    return total
+method_main:
+    t6 = new int[SIZE]
+    i = 0
+L5:
+    cond_jump_false L6 t7 
+    read data
+    t8 = 1
+    i = t8
+    goto L5
+L6:
+    param data
+    param SIZE
+    t9 = call sumArray, 2
+    param result
+    param 0
+    t10 = call max, 2
+    t11 = new Point
+    origin = t11
+    0.x = origin
+    0.y = origin
+    print result
+    print m
+    print t12
+    print t13
+
+======================================================================
+  CODE METRICS
+======================================================================
+  total_lines                    67
+  non_blank_lines                57
+  token_count                    220
+  keyword_count                  35
+  identifier_count               64
+  operator_count                 3
+  cyclomatic_complexity          4
+  lexical_error_count            1
+
+======================================================================
+  COMPILATION SUMMARY
+======================================================================
+
+  Status       : SUCCESS
+  Errors       : 1
+  Warnings     : 1
+  Time         : 12.5 ms
+
+  Errors:
+    [Warning] L0:C0  LL(1) table has 1 conflict(s)

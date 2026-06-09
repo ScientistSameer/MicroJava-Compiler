@@ -1,0 +1,66 @@
+// Sample 3: Complex MicroJava program
+// Demonstrates: classes, arrays, methods, nested scopes
+
+program Sample3
+  final int SIZE = 10;
+
+  class Point {
+    int x;
+    int y;
+  }
+
+  Point origin;
+  int[] data;
+  int n;
+
+{
+  int max(int a, int b)
+  {
+    if (a > b) {
+      return a;
+    } else {
+      return b;
+    }
+  }
+
+  int sumArray(int[] arr, int len)
+    int i;
+    int total;
+  {
+    total = 0;
+    i = 0;
+    while (i < len) {
+      total = total + arr[i];
+      i = i + 1;
+    }
+    return total;
+  }
+
+  void main()
+    int i;
+    int result;
+    int m;
+  {
+    // Initialize array
+    data = new int[SIZE];
+    i = 0;
+    while (i < SIZE) {
+      read(data[i]);
+      i = i + 1;
+    }
+
+    // Use methods
+    result = sumArray(data, SIZE);
+    m = max(result, 0);
+
+    // Object usage
+    origin = new Point;
+    origin.x = 0;
+    origin.y = 0;
+
+    print(result);
+    print(m);
+    print(origin.x);
+    print(origin.y);
+  }
+}

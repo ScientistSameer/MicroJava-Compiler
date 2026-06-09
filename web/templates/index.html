@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MicroJava Mini Compiler/title>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+  <!-- CodeMirror for editor -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <i class="fa-solid fa-microchip"></i>
+      <span class="logo-text">MicroJava<span class="logo-accent">Compiler</span></span>
+    </div>
+    <div class="header-subtitle">By Sameer Babar</div>
+    <div class="header-actions">
+      <button class="btn btn-ghost" id="btn-help" title="Help">
+        <i class="fa fa-question-circle"></i> Help
+      </button>
+      <a class="btn btn-ghost" href="https://github.com" target="_blank" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN LAYOUT ===== -->
+<main class="main-layout">
+
+  <!-- LEFT PANEL: Editor + Controls -->
+  <section class="panel panel-left">
+
+    <!-- Editor toolbar -->
+    <div class="panel-toolbar">
+      <div class="toolbar-title"><i class="fa fa-code"></i> Source Editor</div>
+      <div class="toolbar-right">
+        <select id="sample-select" class="select-input" title="Load sample">
+          <option value="">Load sample…</option>
+        </select>
+        <button class="btn btn-icon" id="btn-clear" title="Clear editor">
+          <i class="fa fa-trash"></i>
+        </button>
+        <button class="btn btn-icon" id="btn-copy" title="Copy code">
+          <i class="fa fa-copy"></i>
+        </button>
+        <button class="btn btn-icon" id="btn-pretty" title="Pretty-print">
+          <i class="fa fa-align-left"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- CodeMirror editor -->
+    <div class="editor-wrapper">
+      <textarea id="code-editor"></textarea>
+    </div>
+
+    <!-- Phase controls -->
+    <div class="controls-bar">
+      <div class="control-group">
+        <label class="control-label">Phase</label>
+        <div class="btn-group" id="phase-group">
+          <button class="btn btn-phase active" data-phase="all">All</button>
+          <button class="btn btn-phase" data-phase="lex">Lexer</button>
+          <button class="btn btn-phase" data-phase="rd">RD Parser</button>
+          <button class="btn btn-phase" data-phase="ll1">LL(1)</button>
+          <button class="btn btn-phase" data-phase="lr">LR</button>
+          <button class="btn btn-phase" data-phase="sym">Sym Table</button>
+          <button class="btn btn-phase" data-phase="sem">Semantic</button>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Options</label>
+        <label class="toggle-label">
+          <input type="checkbox" id="opt-ll1" checked/> LL(1)
+        </label>
+        <label class="toggle-label">
+          <input type="checkbox" id="opt-lr" checked/> LR
+        </label>
+      </div>
+      <button class="btn btn-compile" id="btn-compile">
+        <i class="fa fa-play"></i> Compile
+      </button>
+    </div>
+
+    <!-- Error bar -->
+    <div class="error-bar hidden" id="error-bar">
+      <i class="fa fa-circle-exclamation"></i>
+      <span id="error-bar-text"></span>
+    </div>
+    <div class="success-bar hidden" id="success-bar">
+      <i class="fa fa-circle-check"></i>
+      <span id="success-bar-text"></span>
+    </div>
+  </section>
+
+  <!-- RIGHT PANEL: Results tabs -->
+  <section class="panel panel-right">
+    <div class="panel-toolbar">
+      <div class="toolbar-title"><i class="fa fa-terminal"></i> Compiler Output</div>
+      <div class="toolbar-right">
+        <span id="compile-time" class="time-badge"></span>
+        <button class="btn btn-icon" id="btn-export" title="Export JSON">
+          <i class="fa fa-download"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="tab-bar" id="tab-bar">
+      <button class="tab active" data-tab="tokens">
+        <i class="fa fa-list"></i> Tokens
+      </button>
+      <button class="tab" data-tab="ast">
+        <i class="fa fa-tree"></i> AST
+      </button>
+      <button class="tab" data-tab="rd">
+        <i class="fa fa-sitemap"></i> RD Parser
+      </button>
+      <button class="tab" data-tab="ll1">
+        <i class="fa fa-table"></i> LL(1)
+      </button>
+      <button class="tab" data-tab="lr">
+        <i class="fa fa-table-columns"></i> LR Parser
+      </button>
+      <button class="tab" data-tab="sym">
+        <i class="fa fa-database"></i> Sym Table
+      </button>
+      <button class="tab" data-tab="tac">
+        <i class="fa fa-code-branch"></i> TAC
+      </button>
+      <button class="tab" data-tab="errors">
+        <i class="fa fa-bug"></i> Errors
+        <span class="badge" id="error-badge">0</span>
+      </button>
+      <button class="tab" data-tab="metrics">
+        <i class="fa fa-chart-bar"></i> Metrics
+      </button>
+    </div>
+
+    <!-- Tab contents -->
+    <div class="tab-content-area">
+
+      <!-- Tokens -->
+      <div class="tab-content active" data-tab="tokens">
+        <div class="output-header">
+          <span id="token-count">No tokens yet</span>
+        </div>
+        <div class="table-scroll">
+          <table class="data-table" id="token-table">
+            <thead>
+              <tr><th>Line</th><th>Col</th><th>Type</th><th>Lexeme</th></tr>
+            </thead>
+            <tbody id="token-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- AST -->
+      <div class="tab-content" data-tab="ast">
+        <pre class="output-pre tree-pre" id="ast-output">Run the compiler to see the AST.</pre>
+      </div>
+
+      <!-- RD Parser -->
+      <div class="tab-content" data-tab="rd">
+        <div class="output-header">
+          <span class="status-badge" id="rd-status">—</span>
+          <span>Recursive Descent Parser Trace (first 60 steps)</span>
+        </div>
+        <pre class="output-pre" id="rd-output">Run the compiler to see the RD trace.</pre>
+      </div>
+
+      <!-- LL(1) -->
+      <div class="tab-content" data-tab="ll1">
+        <div class="sub-tabs" id="ll1-subtabs">
+          <button class="sub-tab active" data-sub="ll1-ff">FIRST/FOLLOW</button>
+          <button class="sub-tab" data-sub="ll1-table">Table</button>
+          <button class="sub-tab" data-sub="ll1-trace">Trace</button>
+        </div>
+        <div class="sub-content active" data-sub="ll1-ff">
+          <pre class="output-pre" id="ll1-ff-output">Run compiler to see FIRST/FOLLOW sets.</pre>
+        </div>
+        <div class="sub-content" data-sub="ll1-table">
+          <pre class="output-pre" id="ll1-table-output">Run compiler to see LL(1) table.</pre>
+        </div>
+        <div class="sub-content" data-sub="ll1-trace">
+          <div class="output-header">
+            <span class="status-badge" id="ll1-status">—</span>
+            <span>LL(1) Parse Trace</span>
+          </div>
+          <pre class="output-pre" id="ll1-trace-output">Run compiler to see trace.</pre>
+        </div>
+      </div>
+
+      <!-- LR -->
+      <div class="tab-content" data-tab="lr">
+        <div class="sub-tabs" id="lr-subtabs">
+          <button class="sub-tab active" data-sub="lr-prods">Productions</button>
+          <button class="sub-tab" data-sub="lr-tables">Action/Goto</button>
+          <button class="sub-tab" data-sub="lr-trace">Trace</button>
+        </div>
+        <div class="sub-content active" data-sub="lr-prods">
+          <pre class="output-pre" id="lr-prods-output">Run compiler to see LR productions.</pre>
+        </div>
+        <div class="sub-content" data-sub="lr-tables">
+          <pre class="output-pre" id="lr-tables-output">Run compiler to see ACTION/GOTO table.</pre>
+        </div>
+        <div class="sub-content" data-sub="lr-trace">
+          <div class="output-header">
+            <span class="status-badge" id="lr-status">—</span>
+            <span>SLR(1) Parse Trace</span>
+          </div>
+          <pre class="output-pre" id="lr-trace-output">Run compiler to see LR trace.</pre>
+        </div>
+      </div>
+
+      <!-- Symbol Table -->
+      <div class="tab-content" data-tab="sym">
+        <div class="table-scroll">
+          <table class="data-table" id="sym-table">
+            <thead>
+              <tr><th>Scope</th><th>Kind</th><th>Type</th><th>Name</th><th>Level</th><th>Line</th><th>Value</th></tr>
+            </thead>
+            <tbody id="sym-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAC -->
+      <div class="tab-content" data-tab="tac">
+        <div class="sub-tabs">
+          <button class="sub-tab active" data-sub="tac-raw">Raw TAC</button>
+          <button class="sub-tab" data-sub="tac-opt">Optimized</button>
+        </div>
+        <div class="sub-content active" data-sub="tac-raw">
+          <pre class="output-pre" id="tac-output">Run compiler to see three-address code.</pre>
+        </div>
+        <div class="sub-content" data-sub="tac-opt">
+          <pre class="output-pre" id="tac-opt-output">Run compiler to see optimized TAC.</pre>
+        </div>
+      </div>
+
+      <!-- Errors -->
+      <div class="tab-content" data-tab="errors">
+        <div class="error-list" id="error-list">
+          <div class="empty-state"><i class="fa fa-check-circle"></i> No errors to display.</div>
+        </div>
+      </div>
+
+      <!-- Metrics -->
+      <div class="tab-content" data-tab="metrics">
+        <div class="metrics-grid" id="metrics-grid">
+          <div class="empty-state"><i class="fa fa-chart-bar"></i> Run the compiler to see metrics.</div>
+        </div>
+      </div>
+
+    </div><!-- tab-content-area -->
+  </section>
+
+</main>
+
+<!-- ===== LOADING OVERLAY ===== -->
+<div class="overlay hidden" id="loading-overlay">
+  <div class="spinner-box">
+    <div class="spinner"></div>
+    <p>Compiling…</p>
+  </div>
+</div>
+
+<!-- ===== HELP MODAL ===== -->
+<div class="modal-overlay hidden" id="help-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2><i class="fa fa-question-circle"></i> MicroJava Compiler Help</h2>
+      <button class="modal-close" id="modal-close"><i class="fa fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <h3>About</h3>
+      <p>This is a full MicroJava mini-compiler built for CS-471L CC Lab Final Term Project at UET Lahore by Sameer Babar. It includes:</p>
+      <ul>
+        <li><b>Lexer</b> — tokenizes MicroJava source with double buffering</li>
+        <li><b>Recursive Descent Parser</b> — builds an AST with error recovery</li>
+        <li><b>LL(1) Predictive Parser</b> — table-driven with FIRST/FOLLOW sets</li>
+        <li><b>SLR(1) LR Parser</b> — shift-reduce with automatic table construction</li>
+        <li><b>Symbol Table</b> — hash-based with nested scope support</li>
+        <li><b>Semantic Analyzer</b> — type checking and scope verification</li>
+        <li><b>TAC Generator</b> — three-address code with constant folding + DCE</li>
+      </ul>
+      <h3>MicroJava Syntax Quick Reference</h3>
+      <pre class="help-code">program Name
+  final int MAX = 100;
+  int x, y;
+  class Point { int px; int py; }
+{
+  void main() int i; {
+    x = 10;
+    if (x > 0) { print(x); }
+    while (i &lt; MAX) { i = i + 1; }
+    read(y);
+  }
+}</pre>
+      <h3>Keyboard Shortcuts</h3>
+      <table class="kbd-table">
+        <tr><td><kbd>Ctrl+Enter</kbd></td><td>Compile</td></tr>
+        <tr><td><kbd>Ctrl+L</kbd></td><td>Clear editor</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Close modal</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

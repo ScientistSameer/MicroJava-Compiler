@@ -1,0 +1,35 @@
+// Sample 1: Basic valid MicroJava program
+// Demonstrates: variables, constants, if/else, while, read, print
+
+program Sample1
+  final int MAX = 100;
+  int sum;
+  int count;
+  int x;
+
+{
+  void main()
+    int i;
+    int temp;
+  {
+    sum = 0;
+    count = 0;
+    i = 0;
+
+    // Read numbers and accumulate
+    while (i < MAX) {
+      read(temp);
+      if (temp > 0) {
+        sum = sum + temp;
+        count = count + 1;
+      } else {
+        sum = sum - temp;
+      }
+      i = i + 1;
+    }
+
+    // Print the result
+    print(sum, 10);
+    print(count, 5);
+  }
+}
