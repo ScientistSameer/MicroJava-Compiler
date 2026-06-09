@@ -491,11 +491,20 @@ class LRAutomaton:
 # Shift-reduce driver
 # --------------------------------------------------------------------------
 
+_CACHED_AUTOMATON: Optional['LRAutomaton'] = None
+
+def _get_automaton() -> 'LRAutomaton':
+    global _CACHED_AUTOMATON
+    if _CACHED_AUTOMATON is None:
+        _CACHED_AUTOMATON = LRAutomaton()
+    return _CACHED_AUTOMATON
+
+
 class LRParser:
     def __init__(self, tokens: List[Token], error_handler: ErrorHandler):
         self._tokens  = tokens
         self._eh      = error_handler
-        self._auto    = LRAutomaton()
+        self._auto    = _get_automaton()
         self._trace: List[dict] = []
 
     @property

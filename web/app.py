@@ -17,9 +17,10 @@ from flask_cors import CORS
 
 from src.compiler import MicroJavaCompiler
 
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__,
-            template_folder='templates',
-            static_folder='static')
+            template_folder=os.path.join(_THIS_DIR, 'templates'),
+            static_folder=os.path.join(_THIS_DIR, 'static'))
 CORS(app)
 
 compiler = MicroJavaCompiler()
